@@ -114,7 +114,16 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 
+# Markdown-it config
+## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
 markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: '“”‘’'
   plugins:
     - markdown-it-abbr
     - markdown-it-footnote
@@ -122,6 +131,12 @@ markdown:
     - markdown-it-sub
     - markdown-it-sup
     - markdown-it-emoji
+  anchors:
+    level: 2
+    collisionSuffix: 'v'
+    permalink: true
+    permalinkClass: header-anchor
+    permalinkSymbol: ''
 
 ## Themes: https://hexo.io/themes/
 theme: Anisina
@@ -150,8 +165,16 @@ post-default-img-mobile: #移动端显示的图片
 # search api , set your custom key
 swiftype_key: 
 
-
-# archive page title 
+category_generator:
+  per_page: 20
+category:
+  title: categories
+  description: 可以根据分类检索文章
+archive_generator:
+  per_page: 20
+  yearly: true
+  monthly: true
+  daily: false
 archive:
-    title: archives
-    description: 可以根据归档日期检索所有文件
+  title: archives
+  description: 可以根据归档日期检索文章

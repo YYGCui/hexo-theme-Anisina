@@ -13,47 +13,36 @@ layout: layout
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
                 <div class="site-heading text-center">
-                    <h1><%= config.archive.title || config.title %></h1>
-                    <span class="subheading"><%= config.archive.description || config.subtitle || "" %></span>
+                    <h1><%= config.category.title || config.title %></h1>
+                    <span class="subheading"><%= config.category.description || config.subtitle || "" %></span>
                 </div>
             </div>
         </div>
     </div>
 </header>
-<% 
-   var lastYear;
-   var lastMonth;
-%>
+
 <!-- Main Content -->
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <!-- archive list -->
-            <% page.posts.sort('date', 'desc').each(function(post){ %>
-				<% var year = post.date.year(); %>
-				<% var month = post.date.format('MM'); %>
-                <% var day = post.date.format('MM-DD'); %>
-				<% if (lastYear != year) { %>
-					<% if (lastYear != null) { %>
-					</div><!--year-->
-					<% } %>
-					<% lastYear = year; %>
-					<div class="archive archive-year" data-date="<%= year %>">
-						<h2 class="archive-title">
-						<span class="fa fa-archive">
-							 <a href="<%- url_for(config.archive_dir + '/' + year) %>"><%= year %></a>
-						</span>
-						</h2>
-				<% } %>
+            <div class="category">
+                <h2 class="category-title">
+                <span class="fa fa-category">
+                    <a href="<%- url_for(config.category_dir + '/' + page.category) %>"><%= page.category %></a>
+                </span>
+                </h2>
+                            
+            <!-- category list -->
+            <% page.posts.each(function(post){ %>
 				<div class="one-tag-list">
                 <div class="post-preview">
-                    <span class="archive-date"><%= day %></span>
+                    <span class="archive-date"><%= post.date.format(config.date_format) %></span>
                     <a href="<%- config.root %><%- post.path %>">
-                        <h3 class="post-title archive">
+                        <h3 class="post-title category">
                             <%- post.title || "Untitled" %>
                         </h3>
                         <% if (post.subtitle && post.subtitle.length) { %>
-                        <h3 class="post-subtitle archive">
+                        <h3 class="post-subtitle category">
                             <%- post.subtitle %>
                         </h3>
                         <% } %>

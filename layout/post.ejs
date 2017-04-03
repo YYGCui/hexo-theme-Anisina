@@ -45,6 +45,12 @@ layout: layout
                          </span>
                     </span>
                     <div class="tags text-center">
+                        <span>Categories:</span>
+                        <% page.categories.forEach(function(cat){ %>
+                        <a class="tag" href="<%= config.root %>categories/<%= cat.name %>"
+                           title="<%= cat.name %>"><%= cat.name %></a>
+                        <% }) %>
+                        <span>Tags:</span>
                         <% page.tags.forEach(function(tag){ %>
                         <a class="tag" href="<%= config.root %>tags/#<%= tag.name %>"
                            title="<%= tag.name %>"><%= tag.name %></a>
