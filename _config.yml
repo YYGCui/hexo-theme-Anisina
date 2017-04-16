@@ -178,3 +178,5 @@ archive_generator:
 archive:
   title: archives
   description: 可以根据归档日期检索文章
+tag_generator:
+  per_page: 20
