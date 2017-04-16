@@ -22,7 +22,6 @@ layout: layout
 </header>
 <% 
    var lastYear;
-   var lastMonth;
 %>
 <!-- Main Content -->
 <div class="container">
@@ -31,8 +30,7 @@ layout: layout
             <!-- archive list -->
             <% page.posts.sort('date', 'desc').each(function(post){ %>
 				<% var year = post.date.year(); %>
-				<% var month = post.date.format('MM'); %>
-                <% var day = post.date.format('MM-DD'); %>
+                <% var monthDay = post.date.format('MM-DD'); %>
 				<% if (lastYear != year) { %>
 					<% if (lastYear != null) { %>
 					</div><!--year-->
@@ -47,7 +45,7 @@ layout: layout
 				<% } %>
 				<div class="one-tag-list">
                 <div class="post-preview">
-                    <span class="archive-date"><%= day %></span>
+                    <span class="archive-date"><%= monthDay %></span>
                     <a href="<%- config.root %><%- post.path %>">
                         <h3 class="post-title archive">
                             <%- post.title || "Untitled" %>

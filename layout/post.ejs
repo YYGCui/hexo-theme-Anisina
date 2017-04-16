@@ -47,12 +47,12 @@ layout: layout
                     <div class="tags text-center">
                         <span>Categories:</span>
                         <% page.categories.forEach(function(cat){ %>
-                        <a class="tag" href="<%= config.root %>categories/<%= cat.name %>"
+                        <a class="tag" href="<%= config.root %><%= cat.path %>"
                            title="<%= cat.name %>"><%= cat.name %></a>
                         <% }) %>
                         <span>Tags:</span>
                         <% page.tags.forEach(function(tag){ %>
-                        <a class="tag" href="<%= config.root %>tags/#<%= tag.name %>"
+                        <a class="tag" href="<%= config.root %><%= tag.path %>"
                            title="<%= tag.name %>"><%= tag.name %></a>
                         <% }) %>
                     </div>

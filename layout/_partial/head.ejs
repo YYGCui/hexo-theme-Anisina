@@ -15,6 +15,10 @@
     <title>
         <% if (page.title) { %>
         <%= page.title + '｜' + config.SEOTitle %>
+        <% } else if (is_category()) { %>
+        <%= page.category + '｜' + config.SEOTitle %>
+        <% } else if (is_archive()) { %>
+        <%= config.archive.title + '｜' + config.SEOTitle %>
         <% } else{ %>
         <%= config.SEOTitle %>
         <% } %>

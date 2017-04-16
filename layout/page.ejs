@@ -124,6 +124,20 @@ layout: layout
 </style>
 <% } %>
 <!-- Page Header -->
+<% if (page.type == "categories" || page.type == "tags") { %>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading text-center">
+                    <h1><%= page.title || config.title %></h1>
+                    <span class="subheading"><%= page.description || config.subtitle || "" %></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<% } else { %>
 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
     <div class="row">
         <header class="intro-header">
@@ -140,7 +154,36 @@ layout: layout
         </header>
     </div>
 </div>
+<% } %>
 <!-- Main Content -->
+<% if (page.type == "categories") { %>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <% site.categories.forEach(function(cat){ %>
+            <div class="category">
+                <h2 class="category-title">
+                <span class="fa fa-category">
+                    <a href="<%= config.root %><%= cat.path %>"><%= cat.name %></a> <small><%= cat.posts.length %></small>
+                </span>
+                </h2>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+<% } else if (page.type == "tags") { %>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <!-- 标签云 -->
+            <div id='tag_cloud' class="tags">
+                <% site.tags.map(function(tag){ %>
+                <a href="<%= config.root %><%= tag.path %>" title="<%= tag.name %>" rel="<%= tag.length %>"><%= tag.name %></a>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+<% } else { %>
 <div class="container custom-haojen-container">
     <!-- Post Container -->
     <div class="row">
@@ -275,3 +318,4 @@ layout: layout
         </div>
     </div>
 </div>
+<% } %>
