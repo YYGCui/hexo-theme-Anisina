@@ -180,3 +180,6 @@ archive:
   description: 可以根据归档日期检索文章
 tag_generator:
   per_page: 20
+tag:
+  title: tags
+  description: 可以根据标签检索文件

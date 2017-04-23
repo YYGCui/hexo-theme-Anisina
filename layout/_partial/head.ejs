@@ -19,6 +19,8 @@
         <%= page.category + '｜' + config.SEOTitle %>
         <% } else if (is_archive()) { %>
         <%= config.archive.title + '｜' + config.SEOTitle %>
+        <% } else if (is_tag()) { %>
+        <%= page.tag + '｜' + config.SEOTitle %>
         <% } else{ %>
         <%= config.SEOTitle %>
         <% } %>
