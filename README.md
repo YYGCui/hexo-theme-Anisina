@@ -1,19 +1,25 @@
 # Anisina
 
-<a href="http://haojen.github.io/2016/08/06/Anisina-%E4%B8%AD%E6%96%87%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">点击查看中文使用教程</a>
+<a href="https://haojen.github.io/2017/05/09/Anisina-%E4%B8%AD%E6%96%87%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">点击查看中文使用教程</a>
 
-> simple / grace / small
+> simple / grace / friendly
 
 <img src="./Screenshots/Anisina.png" />
-<!--
-## Next Version Think About :triangular_flag_on_post:
 
-- Add Custom Favicon Function ( thanks @thankuu advice :blush: )
-- More Animation 
-- Bug fix
-- And If You Have any Best Idea , Please Contact To me , My Email haojen.ma@gmail.com , Or Create A Issue :smile:-->
 
 ## Update Log
+
+### Anisina V3.3 (2018-11-07) 
+
+- Support Mathjax
+
+### Anisina V3.2 (2018-07-16) 
+
+- Support [Valine](https://valine.js.org/) comment system
+
+### Anisina V3.1 (2017-05-9)
+
+- Add Livere disqus (in your `_config.yml` add `use_livere: true` , and config you livere uid `livere_uid: hereIsYourLivereID`, here is Livere website <a href="https://livere.com/">go to livere </a>, and remember clear you another disqus system, like duoshuo.)
 
 ### Anisina v3 (2016-09-4)
 
@@ -85,7 +91,7 @@ thanks @HipHopCoderS PR :) and all users
 - SEO
 - Immersive status bar
 - Search
-- Preivew Statistical
+- Preview Statistical
 
 ### Install
 
@@ -149,7 +155,13 @@ You can easily get stared by modifying ```config.yml```
 
 1. use hexo command `hexo new page "Tags"`
 2. then open `yourblog/source` folder , find `Tags/index.md`, set `layout: tags`
-3. after use hexo cammand reset hexo `hexo clean && hexo g` , all done : )
+3. after use hexo command reset hexo `hexo clean && hexo g` , all done : )
+
+#### Create Categories page
+
+1. use hexo command `hexo new page "Categories"`
+2. then open `yourblog/source` folder, find `Categories/index.md`, set `layout: categories`
+3. after use hexo command reset hexo `hexo clean && hexo g`, all done :)
 
 
 #### 	cdn-url
@@ -293,4 +305,9 @@ and also you can help me fix bugs and add new feature :)
 
 ## License
 Apache License Version 2.0
+
+
+## And my another Hexo theme
+This it [Hexo-theme-Claudia](https://github.com/Haojen/hexo-theme-Claudia), hope you like it!
+
 	
